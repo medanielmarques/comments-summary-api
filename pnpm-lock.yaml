@@ -13,7 +13,7 @@ dependencies:
     version: 2.2.2
   '@t3-oss/env-nextjs':
     specifier: ^0.11.1
-    version: 0.11.1(typescript@4.9.5)(zod@3.23.8)
+    version: 0.11.1(typescript@5.6.2)(zod@3.23.8)
   '@vercel/node':
     specifier: ^3.2.12
     version: 3.2.12
@@ -31,6 +31,9 @@ devDependencies:
   drizzle-kit:
     specifier: ^0.24.2
     version: 0.24.2
+  typescript:
+    specifier: ^5.6.2
+    version: 5.6.2
 
 packages:
 
@@ -732,7 +735,7 @@ packages:
       picomatch: 2.3.1
     dev: false
 
-  /@t3-oss/env-core@0.11.1(typescript@4.9.5)(zod@3.23.8):
+  /@t3-oss/env-core@0.11.1(typescript@5.6.2)(zod@3.23.8):
     resolution: {integrity: sha512-MaxOwEoG1ntCFoKJsS7nqwgcxLW1SJw238AJwfJeaz3P/8GtkxXZsPPolsz1AdYvUTbe3XvqZ/VCdfjt+3zmKw==}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -741,11 +744,11 @@ packages:
       typescript:
         optional: true
     dependencies:
-      typescript: 4.9.5
+      typescript: 5.6.2
       zod: 3.23.8
     dev: false
 
-  /@t3-oss/env-nextjs@0.11.1(typescript@4.9.5)(zod@3.23.8):
+  /@t3-oss/env-nextjs@0.11.1(typescript@5.6.2)(zod@3.23.8):
     resolution: {integrity: sha512-rx2XL9+v6wtOqLNJbD5eD8OezKlQD1BtC0WvvtHwBgK66jnF5+wGqtgkKK4Ygie1LVmoDClths2T4tdFmRvGrQ==}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -754,8 +757,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@t3-oss/env-core': 0.11.1(typescript@4.9.5)(zod@3.23.8)
-      typescript: 4.9.5
+      '@t3-oss/env-core': 0.11.1(typescript@5.6.2)(zod@3.23.8)
+      typescript: 5.6.2
       zod: 3.23.8
     dev: false
 
@@ -2393,6 +2396,11 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: false
+
+  /typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}

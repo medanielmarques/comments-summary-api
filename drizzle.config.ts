@@ -4,13 +4,13 @@ import { env } from "./src/env";
 const isDev = env.NODE_ENV === "development";
 
 export default {
-  schema: "./src/db/schema.ts",
+  schema: "./src/yeah/schema.ts",
   out: "./migrations",
   dialect: "sqlite",
   ...(isDev
     ? {
         dbCredentials: {
-          url: "file:./db.sqlite",
+          url: "file:./my.db",
         },
       }
     : {
