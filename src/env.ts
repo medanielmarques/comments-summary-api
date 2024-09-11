@@ -10,6 +10,9 @@ export const env = createEnv({
     DATABASE_URL: z.string(),
     DATABASE_TOKEN: z.string().optional(),
 
+    YOUTUBE_DATA_API_KEY: z.string(),
+    OPENAI_API_KEY: z.string(),
+
     SUPABASE_URL: z.string(),
     SUPABASE_ANON_KEY: z.string(),
     // HIGHLIGHT_PROJECT_ID: z.string(),
@@ -20,6 +23,9 @@ export const env = createEnv({
 
     DATABASE_URL: process.env.DATABASE_URL,
     DATABASE_TOKEN: process.env.DATABASE_TOKEN,
+
+    YOUTUBE_DATA_API_KEY: process.env.YOUTUBE_DATA_API_KEY,
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
 
     SUPABASE_URL: process.env.SUPABASE_URL,
     SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,

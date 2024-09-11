@@ -1,5 +1,5 @@
 import { type Config } from "drizzle-kit";
-import { env } from "./src/env";
+import { env } from "./src/env.js";
 
 const isDev = env.NODE_ENV === "development";
 
