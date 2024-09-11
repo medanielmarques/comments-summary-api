@@ -1,0 +1,1 @@
+ALTER TABLE `comments_summary` DROP COLUMN `test`;

@@ -7,7 +7,6 @@ export const commentsSummary = sqliteTable(
   {
     id: text("id", { mode: "text" }).primaryKey().$default(cuid),
     summary: text("summary", { mode: "json" }).notNull(),
-    test: text("test", { mode: "json" }),
     videoId: text("video_id", { length: 11 }).unique().notNull(),
     userId: text("user_id", { length: 36 }).notNull(),
     createdAt: int("created_at", { mode: "timestamp" })
