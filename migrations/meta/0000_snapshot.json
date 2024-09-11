@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "800b4564-af9c-41c8-a1d9-ff7b27d31a8a",
+  "id": "fed180ed-2aee-4a7f-bf6e-9d87930d3824",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "comments_summary": {
@@ -18,7 +18,7 @@
           "name": "summary",
           "type": "text",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         },
         "video_id": {

@@ -1,4 +1,4 @@
-name: Run migrations
+name: Deploy to Vercel
 
 on:
   push:
@@ -16,16 +16,22 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
         run: pnpm install
 
       - name: Run Migrations
-        run: pnpm migrate
+        run: pnpm db:generate && pnpm db:migrate
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DATABASE_TOKEN: ${{ secrets.DATABASE_TOKEN }}
 
-      - name: Run migrations
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Deploy to Vercel
         run: vercel --prod
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

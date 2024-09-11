@@ -1,6 +1,6 @@
 CREATE TABLE `comments_summary` (
 	`id` text PRIMARY KEY NOT NULL,
-	`summary` text,
+	`summary` text NOT NULL,
 	`video_id` text(11) NOT NULL,
 	`user_id` text(36) NOT NULL,
 	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
