@@ -1,0 +1,1 @@
+ALTER TABLE `comments_summary` ADD `test` text;

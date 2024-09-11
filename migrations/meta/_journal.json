@@ -8,6 +8,13 @@
       "when": 1726066867044,
       "tag": "0000_tan_ulik",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1726080045870,
+      "tag": "0001_natural_giant_man",
+      "breakpoints": true
     }
   ]
 }
