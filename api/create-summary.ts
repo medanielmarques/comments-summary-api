@@ -1,24 +1,15 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import OpenAI from "openai";
 import { env } from "../src/env.js";
-import { Redis } from "@upstash/redis";
-
-interface Comment {
-  commentId: string;
-  comment: string;
-}
+import { redis } from "../src/lib/redis.js";
 
 function enumerateComments(comments: string[]): string {
   return comments.map((comment, index) => `${index + 1}. ${comment}`).join(" ");
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // from req params
   const videoId = "LSo7xH7YgaY";
-
-  const redis = new Redis({
-    url: env.UPSTASH_REDIS_REST_URL,
-    token: env.UPSTASH_REDIS_REST_TOKEN,
-  });
 
   const comments = await redis.smembers(`video:${videoId}:comments-content`);
   const openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });

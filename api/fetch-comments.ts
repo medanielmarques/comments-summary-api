@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { google } from "googleapis";
 import { env } from "../src/env.js";
-import { Redis } from "@upstash/redis";
+import { redis } from "../src/lib/redis.js";
 
 interface Comment {
   commentId: string;
@@ -35,13 +35,9 @@ async function fetchComments(videoId: string): Promise<Comment[]> {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // from req params
   const videoId = "LSo7xH7YgaY";
   const comments = await fetchComments(videoId);
-
-  const redis = new Redis({
-    url: env.UPSTASH_REDIS_REST_URL,
-    token: env.UPSTASH_REDIS_REST_TOKEN,
-  });
 
   const commentsId = comments.map((c) => c.commentId);
   const commentsContent = comments.map((c) => c.comment);
