@@ -8,8 +8,7 @@ function enumerateComments(comments: string[]): string {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // from req params
-  const videoId = "LSo7xH7YgaY";
+  const videoId = req.query.videoId as string;
 
   const comments = await redis.smembers(`video:${videoId}:comments-content`);
   const openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });

@@ -9,8 +9,7 @@ type VideoInfo = {
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // from req params
-  const videoId = "LSo7xH7YgaY";
+  const videoId = req.query.videoId as string;
 
   const commentsId = await redis.smembers(`video:${videoId}:comments-id`);
   const videoInfo: VideoInfo | null = await redis.hgetall(

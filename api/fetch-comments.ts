@@ -35,8 +35,7 @@ async function fetchComments(videoId: string): Promise<Comment[]> {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // from req params
-  const videoId = "LSo7xH7YgaY";
+  const videoId = req.query.videoId as string;
   const comments = await fetchComments(videoId);
 
   const commentsId = comments.map((c) => c.commentId);
@@ -44,13 +43,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   await redis.sadd(`video:${videoId}:comments-id`, ...commentsId);
   await redis.sadd(`video:${videoId}:comments-content`, ...commentsContent);
-  await redis.hset(`video:${videoId}:summary`, {
-    videoId,
-    summary: null,
-  });
 
   res.status(200).json({
     message: "Comments fetched successfully.",
-    comments,
   });
 }
